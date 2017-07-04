@@ -1,0 +1,14 @@
+<md-toolbar color="primary">
+  <span>Portal</span>
+  <span class="toolbar-spacer"></span>
+
+  <span *ngIf="isAuth">
+    <button md-icon-button>
+      <img class="user-avatar" [src]="(user | async)?.photoURL">
+    </button>
+    <span class="mat-button">{{(user | async)?.displayName}}</span>
+    <button md-icon-button (click)="logout()"><md-icon>exit_to_app</md-icon></button>
+  </span>
+  
+</md-toolbar>
+<router-outlet></router-outlet>

@@ -1,0 +1,48 @@
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  line-height: $line-height-base;
+  color: $gray-base;
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  background-color: $body-bg;
+}
+
+.mat-sidenav {
+  max-width: 300px;
+  width: 100%;
+}
+
+.mat-icon {
+  cursor: pointer;
+}
+
+.mat-list-item-content {
+  cursor: pointer;
+  transition: 0.2s;
+  
+  &:hover {
+    background-color: #eaeaea;
+    
+  }
+}
+
+.toolbar-spacer {
+  flex: 1;
+}
+
+.mat-input-container {
+  width: 100%;
+}
+
+.icon-padding-left {
+  padding-left: $padding-middle;
+}
+
+.icon-padding-right {
+  padding-right: $padding-middle;
+}
+
+a {
+  color: $brand-info;
+}

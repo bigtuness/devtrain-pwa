@@ -1,0 +1,22 @@
+@import '~@angular/material/_theming.scss';
+
+@include mat-core();
+
+@function mat-light-theme($primary, $accent, $warn) {
+  @return (
+    primary: $primary,
+    accent: $accent,
+    warn: $warn,
+    is-dark: false,
+    foreground: $mat-light-theme-foreground,
+    background: $mat-light-theme-background,
+  );
+}
+
+$custom-theme-primary: mat-palette($mat-blue);
+$custom-theme-accent: mat-palette($mat-orange, A200, A100, A400);
+$custom-theme-warn: mat-palette($mat-red);
+
+$app-theme: mat-light-theme($custom-theme-primary, $custom-theme-accent, $custom-theme-warn);
+
+@include angular-material-theme($app-theme);

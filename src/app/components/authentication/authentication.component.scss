@@ -1,0 +1,20 @@
+.auth-btn {
+  display: flex;
+  width: 200px;
+  margin-top: 16px;
+  align-self: center;
+
+  md-icon {
+    padding-right: 10px;
+  }
+}
+
+.auth-card {
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  margin-top: 10%;
+  max-width: 260px;
+}

@@ -1,0 +1,29 @@
+// Colors
+
+$gray-base:                       rgba(0, 0, 0, 0.6);
+
+$brand-success:                   #4caf50;
+$brand-info:                      #317dc7;
+$brand-warning:                   #ff9500;
+$brand-danger:                    #f44336;
+
+// Body
+
+$body-bg:                         rgba(0, 0, 0, 0.1);
+$link-color:                        $brand-success;
+
+// Font
+
+$font-family-sans-serif:            'Roboto', Helvetica, Arial, sans-serif;
+$font-family-serif:                 Georgia, 'Roboto', Times, serif;
+$font-family-base:                  $font-family-sans-serif;
+
+$font-size-base:                    14px;
+
+$line-height-base:                  1.28;
+
+// Padding
+
+$padding-base:                      24px;
+$padding-middle:                    16px;
+$padding-small:                     8px;
