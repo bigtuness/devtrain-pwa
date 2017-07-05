@@ -1,14 +1,17 @@
 <md-card>
-  <div class="chat-container" *ngFor="let message of messages | async">
-    <span>{{message.timestamp | date: 'HH:mm'}}</span>
-    <span>{{message.name}}</span>
-    <p>{{message.text}}</p>
+  <div class="chat-container" >
+    <div class="chat-container-item" *ngFor="let message of messages | async">
+      <span>{{message.timestamp | date: 'HH:mm'}}</span>
+      <span>{{message.name}}</span>
+      <p>{{message.text}}</p>
+    </div>
   </div>
-  <div class="input-container">
+
+  <div class="input-container mat-elevation-z6">
     <md-input-container>
-      <input mdInput placeholder="Type message here..." [(ngModel)]="text" (keyup.enter)="send()">
+      <input mdInput placeholder="Type a message here..." [(ngModel)]="text" (keyup.enter)="send()">
     </md-input-container>
-    <button md-raised-button (click)="send()">
+    <button md-button (click)="send()">
       <md-icon md-list-icon>send</md-icon>
     </button>
   </div>

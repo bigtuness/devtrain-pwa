@@ -3,3 +3,17 @@
   height: 40px;
   border-radius: 50%;
 }
+
+md-toolbar {
+  position: relative;
+  z-index: 2;
+}
+
+.content {
+  position: absolute;
+  top: 64px;
+  bottom: 0;
+  left:0;
+  right: 0;
+  overflow: auto;
+}

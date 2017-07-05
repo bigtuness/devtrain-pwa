@@ -19,7 +19,7 @@ export class ChatComponent implements OnInit {
   ngOnInit() {
     this.messages = this.db.list('/messages', {
       query: {
-        limitToLast: 10
+        limitToLast: 20
       }
     });
     this.afAuth.authState.subscribe(user => this.name = user ? user.displayName : null);
