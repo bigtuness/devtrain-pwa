@@ -1,8 +1,9 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { AngularFireDatabase,  FirebaseListObservable } from 'angularfire2/database';
 import { AngularFireAuth } from 'angularfire2/auth';
+
 import { ChatMessage } from './models/message.class';
-declare const document: any;
+
 @Component({
   selector: 'pwa-chat',
   templateUrl: './chat.component.html',
