@@ -30,7 +30,7 @@ import { ChatComponent } from './components/chat/chat.component';
     AngularFireAuthModule,
     AngularFireDatabaseModule,
     RouterModule.forRoot([
-      { path: '', redirectTo: 'products', pathMatch: 'full' },
+      { path: '', redirectTo: 'chat', pathMatch: 'full' },
       { path: 'login', component: AuthenticationComponent },
       { path: 'chat', component: ChatComponent, canActivate: [AuthGuard] },
     ]),

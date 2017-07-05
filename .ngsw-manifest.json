@@ -1,0 +1,24 @@
+{
+  "static.ignore": [
+    "\\.js\\.map$",
+    "^/assets/images/.*/unused/",
+    "^/generated/(?:docs/(?!api/api-list\\.json).*|images|live-examples|zips)/"
+  ],
+  "external": {
+    "urls": [
+      { "url": "https://fonts.googleapis.com/icon?family=Material+Icons" },
+      { "url": "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic" }
+    ]
+  },
+  "routing": {
+    "index": "/index.html",
+    "routes": {
+      "/": {
+        "prefix": false
+      },
+      "^/regex/.*/route$": {
+        "match": "regex"
+      }
+    }
+  }
+}

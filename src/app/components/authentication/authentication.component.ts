@@ -17,7 +17,7 @@ export class AuthenticationComponent implements OnInit {
     this.afAuth.authState.subscribe(auth => auth && this.router.navigateByUrl('/chat'));
   }
 
-  login(provider: string) {
+  login() {
     this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
   }
 
