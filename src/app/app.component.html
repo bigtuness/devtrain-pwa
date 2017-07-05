@@ -1,5 +1,7 @@
 <md-toolbar color="primary" class="mat-elevation-z6">
-  <span>Chat</span>
+  <button md-icon-button (click)="sidenav.toggle()">
+    <md-icon>menu</md-icon>
+  </button>
   <span class="toolbar-spacer"></span>
 
   <span *ngIf="isAuth">
@@ -7,11 +9,23 @@
       <img class="user-avatar" [src]="(user | async)?.photoURL">
     </button>
     <span class="mat-button">{{(user | async)?.displayName}}</span>
-    <button md-icon-button (click)="logout()"><md-icon>exit_to_app</md-icon></button>
+    <button md-icon-button (click)="logout()">
+      <md-icon>exit_to_app</md-icon>
+    </button>
   </span>
   
 </md-toolbar>
 
-<div class="content">
-  <router-outlet></router-outlet>
-</div>
+<md-sidenav-container class="height-without-toolbar">
+  <md-sidenav #sidenav mode="side" align="start" class="mat-elevation-z6">
+    <md-toolbar color="primary">
+      <button md-icon-button (click)="sidenav.toggle()">
+        <md-icon>arrow_back</md-icon>
+      </button>
+    </md-toolbar>
+  </md-sidenav>
+
+  <!--<div class="content">-->
+    <router-outlet></router-outlet>
+  <!--</div>-->
+</md-sidenav-container>
