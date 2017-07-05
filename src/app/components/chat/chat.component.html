@@ -1,5 +1,5 @@
 <md-card>
-  <div class="chat-container">
+  <div #element class="chat-container">
     <div class="chat-container-item" *ngFor="let message of messages | async">
       <span>{{message.timestamp | date: 'HH:mm'}}</span>
       <span>{{message.name}}</span>
