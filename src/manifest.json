@@ -2,7 +2,7 @@
   "short_name": "Devtrain PWA",
   "name": "Devtrain PWA",
   "description": "Example application for show PWA features",
-  "start_url": "/chat",
+  "start_url": "index.html",
   "display": "standalone",
   "orientation": "portrait",
   "theme_color": "#317dc7",
