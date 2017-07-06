@@ -4,6 +4,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { AgmCoreModule } from '@agm/core';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
@@ -14,18 +15,23 @@ import { environment } from '../environments/environment';
 import { AuthenticationComponent } from './components/authentication/authentication.component';
 import { AuthGuard } from './components/authentication/auth-guard.service';
 import { ChatComponent } from './components/chat/chat.component';
+import { LiveGpsComponent } from './components/live-gps/live-gps.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AuthenticationComponent,
-    ChatComponent
+    ChatComponent,
+    LiveGpsComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
     HttpModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyCpwnnXug1_nm4mWHqemRr0EmjcqnoJCmw'
+    }),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFireDatabaseModule,
@@ -33,6 +39,7 @@ import { ChatComponent } from './components/chat/chat.component';
       { path: '', redirectTo: 'chat', pathMatch: 'full' },
       { path: 'login', component: AuthenticationComponent },
       { path: 'chat', component: ChatComponent, canActivate: [AuthGuard] },
+      { path: 'live-gps', component: LiveGpsComponent, canActivate: [AuthGuard] },
     ]),
 
     CoreModule
