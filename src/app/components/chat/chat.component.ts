@@ -25,7 +25,6 @@ export class ChatComponent implements OnInit {
       }
     });
     this.afAuth.authState.subscribe(user => this.name = user ? user.displayName : null);
-    this.scrollToBottom();
     this.messages.subscribe(() => this.scrollToBottom());
   }
 

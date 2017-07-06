@@ -13,11 +13,19 @@ import * as firebase from 'firebase/app';
 export class AppComponent {
 
   public isAuth = false;
+  public online: boolean;
   public user: Observable<firebase.User>;
 
   constructor(private afAuth: AngularFireAuth, private router: Router) {
     this.user = afAuth.authState;
     this.user.subscribe(user => this.isAuth = !!user);
+    this.updateNetworkStatus();
+    window.addEventListener('online', () => this.updateNetworkStatus());
+    window.addEventListener('offline', () => this.updateNetworkStatus());
+  }
+
+  updateNetworkStatus() {
+    this.online = navigator.onLine;
   }
 
   logout() {
