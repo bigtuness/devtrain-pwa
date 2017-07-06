@@ -1,0 +1,38 @@
+<md-card>
+  <button md-button (click)="vibrate(1000)">
+    <md-icon>vibration</md-icon>
+    Vibrate!
+  </button>
+
+  <button md-button (click)="fullscreen()">
+    <md-icon>fullscreen</md-icon>
+    Fullscreen
+  </button>
+
+<md-divider></md-divider>
+
+  <md-list>
+    <h3 md-subheader>Battery</h3>
+    <md-list-item *ngIf="batteryDetails.charging">
+      <md-icon md-list-icon>battery_full</md-icon>
+      <h4 md-line>Charging</h4>
+      <p md-line>{{batteryDetails.charging}} </p>
+    </md-list-item>
+    <md-list-item *ngIf="batteryDetails.level">
+      <md-icon md-list-icon>battery_full</md-icon>
+      <h4 md-line>Level</h4>
+      <p md-line>{{batteryDetails.level}} %</p>
+    </md-list-item>
+    <md-list-item *ngIf="batteryDetails.chargingTime">
+      <md-icon md-list-icon>battery_full</md-icon>
+      <h4 md-line>Charging Time</h4>
+      <p md-line>{{batteryDetails.chargingTime}} </p>
+    </md-list-item>
+    <md-list-item *ngIf="batteryDetails.dischargingTime">
+      <md-icon md-list-icon>battery_full</md-icon>
+      <h4 md-line>Discharging Time</h4>
+      <p md-line>{{batteryDetails.dischargingTime}} </p>
+    </md-list-item>
+    
+  </md-list>
+</md-card>

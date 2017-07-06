@@ -16,6 +16,7 @@ import { AuthenticationComponent } from './components/authentication/authenticat
 import { AuthGuard } from './components/authentication/auth-guard.service';
 import { ChatComponent } from './components/chat/chat.component';
 import { LiveGpsComponent } from './components/live-gps/live-gps.component';
+import { FeaturesComponent } from './components/features/features.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { LiveGpsComponent } from './components/live-gps/live-gps.component';
     AuthenticationComponent,
     ChatComponent,
     LiveGpsComponent,
+    FeaturesComponent,
   ],
   imports: [
     BrowserModule,
@@ -40,6 +42,7 @@ import { LiveGpsComponent } from './components/live-gps/live-gps.component';
       { path: 'login', component: AuthenticationComponent },
       { path: 'chat', component: ChatComponent, canActivate: [AuthGuard] },
       { path: 'live-gps', component: LiveGpsComponent, canActivate: [AuthGuard] },
+      { path: 'features', component: FeaturesComponent, canActivate: [AuthGuard] },
     ]),
 
     CoreModule
