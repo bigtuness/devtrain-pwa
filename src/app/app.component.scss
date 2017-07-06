@@ -19,9 +19,22 @@ md-toolbar {
 
 .content {
   position: absolute;
-  top: 56px;
+  top: 64px;
   bottom: 0;
   left:0;
   right: 0;
   overflow: auto;
+}
+
+.mat-list {
+
+  &-item {
+    outline: none;
+  }
+
+  .active {
+    background-color: #eaeaea;
+  }
+
+  opacity: 0.8;
 }
