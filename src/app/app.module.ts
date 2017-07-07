@@ -22,8 +22,8 @@ import { FeaturesComponent } from './components/features/features.component';
     AppComponent,
     AuthenticationComponent,
     ChatComponent,
-    // LiveGpsComponent,
-    // FeaturesComponent,
+    LiveGpsComponent,
+    FeaturesComponent,
   ],
   imports: [
     BrowserModule,
@@ -39,8 +39,8 @@ import { FeaturesComponent } from './components/features/features.component';
       { path: '', redirectTo: 'chat', pathMatch: 'full' },
       { path: 'login', component: AuthenticationComponent },
       { path: 'chat', component: ChatComponent, canActivate: [AuthGuard] },
-      // { path: 'live-gps', component: LiveGpsComponent, canActivate: [AuthGuard] },
-      // { path: 'features', component: FeaturesComponent, canActivate: [AuthGuard] },
+      { path: 'live-gps', component: LiveGpsComponent, canActivate: [AuthGuard] },
+      { path: 'features', component: FeaturesComponent, canActivate: [AuthGuard] },
     ]),
 
     CoreModule
