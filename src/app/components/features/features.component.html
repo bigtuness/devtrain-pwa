@@ -33,6 +33,23 @@
       <h4 md-line>Discharging Time</h4>
       <p md-line>{{batteryDetails.dischargingTime}} </p>
     </md-list-item>
-    
   </md-list>
+
+  <md-list>
+    <h3 md-subheader>Orientation</h3>
+    <md-list-item *ngIf="orientation.gamma">
+      <h4 md-line>Tilt Left/Right [gamma]</h4>
+      <p md-line>{{orientation.gamma}} </p>
+    </md-list-item>
+    <md-list-item *ngIf="orientation.beta">
+      <h4 md-line>Tilt Front/Back [beta]</h4>
+      <p md-line>{{orientation.beta}} %</p>
+    </md-list-item>
+    <md-list-item *ngIf="orientation.alpha">
+      <h4 md-line>Direction [alpha]</h4>
+      <p md-line>{{orientation.alpha}} </p>
+    </md-list-item>
+  </md-list>
+
+  <img src="../../../assets/cat.jpeg" #cat>
 </md-card>

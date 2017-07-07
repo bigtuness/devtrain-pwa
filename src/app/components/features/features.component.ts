@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 
 declare const navigator: any;
 declare const document: any;
@@ -9,13 +9,16 @@ declare const document: any;
   styleUrls: ['./features.component.scss']
 })
 export class FeaturesComponent implements OnInit {
+  @ViewChild('cat') cat: ElementRef;
 
   public batteryDetails: any = {};
+  public orientation: any = {};
 
   constructor() { }
 
   ngOnInit() {
     this.battery();
+    this.deviceOrientation();
   }
 
   vibrate(delay: number) {
@@ -45,6 +48,16 @@ export class FeaturesComponent implements OnInit {
       battery.addEventListener('dischargingtimechange', updateDischargingInfo);
 
     });
+  }
+
+  deviceOrientation() {
+    const onOrientationChanged = eventData => {
+      this.orientation.gamma = Math.round(eventData.gamma);
+      this.orientation.beta = Math.round(eventData.beta);
+      this.orientation.alpha = Math.round(eventData.alpha);
+      this.cat.nativeElement.style.transform = `rotate(${eventData.gamma}deg) rotate3d(1,0,0,${eventData.beta}deg)`;
+    };
+    window.addEventListener('deviceorientation', onOrientationChanged, false);
   }
 
 }
