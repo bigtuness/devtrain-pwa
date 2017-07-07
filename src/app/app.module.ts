@@ -14,16 +14,12 @@ import { environment } from '../environments/environment';
 import { AuthenticationComponent } from './components/authentication/authentication.component';
 import { AuthGuard } from './components/authentication/auth-guard.service';
 import { ChatComponent } from './components/chat/chat.component';
-import { LiveGpsComponent } from './components/live-gps/live-gps.component';
-import { FeaturesComponent } from './components/features/features.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AuthenticationComponent,
-    ChatComponent,
-    LiveGpsComponent,
-    FeaturesComponent,
+    ChatComponent
   ],
   imports: [
     BrowserModule,
@@ -38,9 +34,7 @@ import { FeaturesComponent } from './components/features/features.component';
     RouterModule.forRoot([
       { path: '', redirectTo: 'chat', pathMatch: 'full' },
       { path: 'login', component: AuthenticationComponent },
-      { path: 'chat', component: ChatComponent, canActivate: [AuthGuard] },
-      { path: 'live-gps', component: LiveGpsComponent, canActivate: [AuthGuard] },
-      { path: 'features', component: FeaturesComponent, canActivate: [AuthGuard] },
+      { path: 'chat', component: ChatComponent, canActivate: [AuthGuard] }
     ]),
 
     CoreModule

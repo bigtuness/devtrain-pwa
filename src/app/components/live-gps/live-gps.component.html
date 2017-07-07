@@ -1,5 +1,0 @@
-<agm-map [latitude]="54.827104" [longitude]="21.382348">
-  <agm-polyline *ngFor="let data of clients | async">
-    <agm-polyline-point *ngFor="let point of transformCoords(data.coords)" [latitude]="point.lat" [longitude]="point.lng"></agm-polyline-point>
-  </agm-polyline>
-</agm-map>
