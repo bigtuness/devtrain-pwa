@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
 import { AgmCoreModule } from '@agm/core';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
@@ -23,14 +22,13 @@ import { FeaturesComponent } from './components/features/features.component';
     AppComponent,
     AuthenticationComponent,
     ChatComponent,
-    LiveGpsComponent,
-    FeaturesComponent,
+    // LiveGpsComponent,
+    // FeaturesComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
-    HttpModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyCpwnnXug1_nm4mWHqemRr0EmjcqnoJCmw'
     }),
@@ -41,8 +39,8 @@ import { FeaturesComponent } from './components/features/features.component';
       { path: '', redirectTo: 'chat', pathMatch: 'full' },
       { path: 'login', component: AuthenticationComponent },
       { path: 'chat', component: ChatComponent, canActivate: [AuthGuard] },
-      { path: 'live-gps', component: LiveGpsComponent, canActivate: [AuthGuard] },
-      { path: 'features', component: FeaturesComponent, canActivate: [AuthGuard] },
+      // { path: 'live-gps', component: LiveGpsComponent, canActivate: [AuthGuard] },
+      // { path: 'features', component: FeaturesComponent, canActivate: [AuthGuard] },
     ]),
 
     CoreModule
